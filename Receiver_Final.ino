@@ -32,17 +32,17 @@ void loop() {
     Serial.print("\t");
     Serial.print(test[1]);
     Serial.print("\t\n");*/
-    double roll_transmission=2.08*test[1]+1500;  // linear mapping to generate a pulse width 1ms to 2ms
-    double pitch_transmission=-2.08*test[0]+1500;// linear mapping to generate a pulse width 1ms to 2ms
-    //Setting transmission range from 1250 to 1750
-    if(roll_transmission < 1250)
-      roll_transmission = 1250;
-    if(roll_transmission > 1750)
-      roll_transmission = 1750;
-    if(pitch_transmission < 1250)
-      pitch_transmission = 1250;
-    if(pitch_transmission > 1750)
-      pitch_transmission = 1750;
+    double roll_transmission=8*test[1]+1500;  // linear mapping to generate a pulse width 1ms to 2ms
+    double pitch_transmission=-8*test[0]+1500;// linear mapping to generate a pulse width 1ms to 2ms
+    //Setting transmission range from 1000 to 2000
+    if(roll_transmission < 1000)
+      roll_transmission = 1000;
+    if(roll_transmission > 2000)
+      roll_transmission = 2000;
+    if(pitch_transmission < 1000)
+      pitch_transmission = 1000;
+    if(pitch_transmission > 2000)
+      pitch_transmission = 2000;
     //Setting values on KK2.1
     roll.writeMicroseconds(roll_transmission);
     pitch.writeMicroseconds(pitch_transmission);
